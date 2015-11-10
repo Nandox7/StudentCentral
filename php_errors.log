@@ -5306,3 +5306,80 @@
 [07-Nov-2015 02:15:18 UTC] PHP   4. Cake\Controller\Controller->invokeAction() /home/ubuntu/workspace/studentappnew/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:114
 [07-Nov-2015 02:15:18 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/studentappnew/vendor/cakephp/cakephp/src/Controller/Controller.php:429}() /home/ubuntu/workspace/studentappnew/vendor/cakephp/cakephp/src/Controller/Controller.php:429
 [07-Nov-2015 02:15:18 UTC] PHP   6. App\Controller\EventsController->update() /home/ubuntu/workspace/studentappnew/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[10-Nov-2015 19:39:06 UTC] PHP Fatal error:  Class 'Configure' not found in /home/ubuntu/workspace/StudentCentral/src/Template/Layout/default.ctp on line 18
+[10-Nov-2015 19:39:06 UTC] PHP Stack trace:
+[10-Nov-2015 19:39:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[10-Nov-2015 19:39:06 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[10-Nov-2015 19:39:06 UTC] PHP   3. Cake\Routing\Dispatcher->_invoke() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:87
+[10-Nov-2015 19:39:06 UTC] PHP   4. Cake\Controller\Controller->render() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:120
+[10-Nov-2015 19:39:06 UTC] PHP   5. Cake\View\View->render() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:611
+[10-Nov-2015 19:39:06 UTC] PHP   6. Cake\View\View->renderLayout() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/View/View.php:583
+[10-Nov-2015 19:39:06 UTC] PHP   7. Cake\View\View->_render() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/View/View.php:624
+[10-Nov-2015 19:39:06 UTC] PHP   8. Cake\View\View->_evaluate() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/View/View.php:930
+[10-Nov-2015 19:39:06 UTC] PHP   9. include() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/View/View.php:970
+[10-Nov-2015 19:43:52 UTC] PHP Fatal error:  Class 'App' not found in /home/ubuntu/workspace/StudentCentral/src/Controller/DashboardController.php on line 2
+[10-Nov-2015 19:43:52 UTC] PHP Stack trace:
+[10-Nov-2015 19:43:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[10-Nov-2015 19:43:52 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[10-Nov-2015 19:43:52 UTC] PHP   3. Cake\Routing\Dispatcher->dispatchEvent() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:62
+[10-Nov-2015 19:43:52 UTC] PHP   4. Cake\Event\EventManager->dispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php:78
+[10-Nov-2015 19:43:52 UTC] PHP   5. Cake\Event\EventManager->_callListener() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:355
+[10-Nov-2015 19:43:52 UTC] PHP   6. Cake\Routing\DispatcherFilter->handle() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:389
+[10-Nov-2015 19:43:52 UTC] PHP   7. Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php:145
+[10-Nov-2015 19:43:52 UTC] PHP   8. Cake\Routing\Filter\ControllerFactoryFilter->_getController() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:50
+[10-Nov-2015 19:43:52 UTC] PHP   9. Cake\Core\App::className() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:82
+[10-Nov-2015 19:43:52 UTC] PHP  10. Cake\Core\App::_classExistsInBase() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:64
+[10-Nov-2015 19:43:52 UTC] PHP  11. class_exists() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[10-Nov-2015 19:43:52 UTC] PHP  12. spl_autoload_call() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[10-Nov-2015 19:43:52 UTC] PHP  13. Composer\Autoload\ClassLoader->loadClass() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[10-Nov-2015 19:43:52 UTC] PHP  14. Composer\Autoload\includeFile() /home/ubuntu/workspace/StudentCentral/vendor/composer/ClassLoader.php:301
+[10-Nov-2015 19:43:52 UTC] PHP  15. include() /home/ubuntu/workspace/StudentCentral/vendor/composer/ClassLoader.php:412
+[10-Nov-2015 19:44:07 UTC] PHP Fatal error:  Class 'AppController' not found in /home/ubuntu/workspace/StudentCentral/src/Controller/DashboardController.php on line 4
+[10-Nov-2015 19:44:07 UTC] PHP Stack trace:
+[10-Nov-2015 19:44:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[10-Nov-2015 19:44:07 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[10-Nov-2015 19:44:07 UTC] PHP   3. Cake\Routing\Dispatcher->dispatchEvent() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:62
+[10-Nov-2015 19:44:07 UTC] PHP   4. Cake\Event\EventManager->dispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php:78
+[10-Nov-2015 19:44:07 UTC] PHP   5. Cake\Event\EventManager->_callListener() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:355
+[10-Nov-2015 19:44:07 UTC] PHP   6. Cake\Routing\DispatcherFilter->handle() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:389
+[10-Nov-2015 19:44:07 UTC] PHP   7. Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php:145
+[10-Nov-2015 19:44:07 UTC] PHP   8. Cake\Routing\Filter\ControllerFactoryFilter->_getController() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:50
+[10-Nov-2015 19:44:07 UTC] PHP   9. Cake\Core\App::className() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:82
+[10-Nov-2015 19:44:07 UTC] PHP  10. Cake\Core\App::_classExistsInBase() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:64
+[10-Nov-2015 19:44:07 UTC] PHP  11. class_exists() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[10-Nov-2015 19:44:07 UTC] PHP  12. spl_autoload_call() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[10-Nov-2015 19:44:07 UTC] PHP  13. Composer\Autoload\ClassLoader->loadClass() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[10-Nov-2015 19:44:07 UTC] PHP  14. Composer\Autoload\includeFile() /home/ubuntu/workspace/StudentCentral/vendor/composer/ClassLoader.php:301
+[10-Nov-2015 19:44:07 UTC] PHP  15. include() /home/ubuntu/workspace/StudentCentral/vendor/composer/ClassLoader.php:412
+[10-Nov-2015 19:44:23 UTC] PHP Fatal error:  Cannot use object of type Cake\ORM\Query as array in /home/ubuntu/workspace/StudentCentral/src/Controller/DashboardController.php on line 19
+[10-Nov-2015 19:44:23 UTC] PHP Stack trace:
+[10-Nov-2015 19:44:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[10-Nov-2015 19:44:23 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[10-Nov-2015 19:44:23 UTC] PHP   3. Cake\Routing\Dispatcher->_invoke() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:87
+[10-Nov-2015 19:44:23 UTC] PHP   4. Cake\Controller\Controller->invokeAction() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:114
+[10-Nov-2015 19:44:23 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429}() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[10-Nov-2015 19:44:23 UTC] PHP   6. App\Controller\DashboardController->index() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[10-Nov-2015 19:44:52 UTC] PHP Fatal error:  Cannot use object of type Cake\ORM\ResultSet as array in /home/ubuntu/workspace/StudentCentral/src/Controller/DashboardController.php on line 19
+[10-Nov-2015 19:44:52 UTC] PHP Stack trace:
+[10-Nov-2015 19:44:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[10-Nov-2015 19:44:52 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[10-Nov-2015 19:44:52 UTC] PHP   3. Cake\Routing\Dispatcher->_invoke() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:87
+[10-Nov-2015 19:44:52 UTC] PHP   4. Cake\Controller\Controller->invokeAction() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:114
+[10-Nov-2015 19:44:52 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429}() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[10-Nov-2015 19:44:52 UTC] PHP   6. App\Controller\DashboardController->index() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[10-Nov-2015 19:45:05 UTC] PHP Fatal error:  Cannot use object of type Cake\ORM\Query as array in /home/ubuntu/workspace/StudentCentral/src/Controller/DashboardController.php on line 19
+[10-Nov-2015 19:45:05 UTC] PHP Stack trace:
+[10-Nov-2015 19:45:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[10-Nov-2015 19:45:05 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[10-Nov-2015 19:45:05 UTC] PHP   3. Cake\Routing\Dispatcher->_invoke() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:87
+[10-Nov-2015 19:45:05 UTC] PHP   4. Cake\Controller\Controller->invokeAction() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:114
+[10-Nov-2015 19:45:05 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429}() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[10-Nov-2015 19:45:05 UTC] PHP   6. App\Controller\DashboardController->index() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[10-Nov-2015 19:45:20 UTC] PHP Fatal error:  Cannot use object of type Cake\ORM\ResultSet as array in /home/ubuntu/workspace/StudentCentral/src/Controller/DashboardController.php on line 19
+[10-Nov-2015 19:45:20 UTC] PHP Stack trace:
+[10-Nov-2015 19:45:20 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[10-Nov-2015 19:45:20 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[10-Nov-2015 19:45:20 UTC] PHP   3. Cake\Routing\Dispatcher->_invoke() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:87
+[10-Nov-2015 19:45:20 UTC] PHP   4. Cake\Controller\Controller->invokeAction() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:114
+[10-Nov-2015 19:45:20 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429}() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[10-Nov-2015 19:45:20 UTC] PHP   6. App\Controller\DashboardController->index() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
