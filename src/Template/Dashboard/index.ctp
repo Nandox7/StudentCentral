@@ -2,6 +2,7 @@
             echo $this->Html->script('moment.min.js');
             echo $this->Html->script('jquery.min.js');
             echo $this->Html->script('fullcalendar.min.js');
+            echo $this->Html->script('calendar.js');
             echo $this->Html->css('fullcalendar.css');
             echo $this->Html->css('tasks.css');
             echo $this->Html->css('newstyle.css');
@@ -10,28 +11,8 @@
         <div class="mdl-grid">
           <!-- Calendar -->
           <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
-            <div id="calendar">
-                <script type='text/javascript'>
-                    
-                    $(document).ready(function() {
-                    	 
-                    $('#calendar').fullCalendar({
-                    			header: {
-                    				left: 'prev,next today',
-                    				center: 'title',
-                    				right: 'month,basicWeek,basicDay'
-                    			},
-                    			defaultDate: '2015-11-05',
-                    			editable: true,
-                    			eventLimit: true, // allow "more" link when too many events
-                    			events: <?php echo $json; ?>
-                    		});
-                    		
-                    	});
-                    </script>
-                    
-                    <div id='calendar' style='width: 900px; margin: 0 auto;'></div>
-    
+            <div id="calendar-block">
+                    <div id='calendar'></div>
             </div>
           </div>
           <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
