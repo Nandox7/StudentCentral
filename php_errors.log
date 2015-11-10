@@ -5425,3 +5425,20 @@
 [10-Nov-2015 20:05:58 UTC] PHP  13. Composer\Autoload\ClassLoader->loadClass() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
 [10-Nov-2015 20:05:58 UTC] PHP  14. Composer\Autoload\includeFile() /home/ubuntu/workspace/StudentCentral/vendor/composer/ClassLoader.php:301
 [10-Nov-2015 20:05:58 UTC] PHP  15. include() /home/ubuntu/workspace/StudentCentral/vendor/composer/ClassLoader.php:412
+[10-Nov-2015 20:11:04 UTC] PHP Fatal error:  Class 'App' not found in /home/ubuntu/workspace/StudentCentral/src/Controller/UsersController.php on line 4
+[10-Nov-2015 20:11:04 UTC] PHP Stack trace:
+[10-Nov-2015 20:11:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[10-Nov-2015 20:11:04 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[10-Nov-2015 20:11:04 UTC] PHP   3. Cake\Routing\Dispatcher->dispatchEvent() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:62
+[10-Nov-2015 20:11:04 UTC] PHP   4. Cake\Event\EventManager->dispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php:78
+[10-Nov-2015 20:11:04 UTC] PHP   5. Cake\Event\EventManager->_callListener() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:355
+[10-Nov-2015 20:11:04 UTC] PHP   6. Cake\Routing\DispatcherFilter->handle() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:389
+[10-Nov-2015 20:11:04 UTC] PHP   7. Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php:145
+[10-Nov-2015 20:11:04 UTC] PHP   8. Cake\Routing\Filter\ControllerFactoryFilter->_getController() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:50
+[10-Nov-2015 20:11:04 UTC] PHP   9. Cake\Core\App::className() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:82
+[10-Nov-2015 20:11:04 UTC] PHP  10. Cake\Core\App::_classExistsInBase() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:64
+[10-Nov-2015 20:11:04 UTC] PHP  11. class_exists() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[10-Nov-2015 20:11:04 UTC] PHP  12. spl_autoload_call() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[10-Nov-2015 20:11:04 UTC] PHP  13. Composer\Autoload\ClassLoader->loadClass() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[10-Nov-2015 20:11:04 UTC] PHP  14. Composer\Autoload\includeFile() /home/ubuntu/workspace/StudentCentral/vendor/composer/ClassLoader.php:301
+[10-Nov-2015 20:11:04 UTC] PHP  15. include() /home/ubuntu/workspace/StudentCentral/vendor/composer/ClassLoader.php:412

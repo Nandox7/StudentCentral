@@ -153,23 +153,21 @@ class EventsController extends AppController
 	
     // The update action is called from "webroot/js/ready.js" to update date/time when an event is dragged or resized
 	function update() {
-	    //$events = $this->Events->find()->all();
-	    // Get params from URL
-		$vars = $this->params['url'];
-		// Select correct event ID
-		//$this->Events->id = $vars['id'];
-		// Update & save new values
-		//$this->Events->saveField('start', $vars['start']);
-		//$this->Events->saveField('end', $vars['end']);
-		//$this->Events->saveField('all_day', $vars['allday']);
-		
-		$event = $this->Events->get($vars['id'], [
+        
+        // Get the event id from the request URL
+        $event_id = $this->request->query('id');
+        
+        // Find the event and load it using the id
+        $event = $this->Events->get($event_id, [
             'contain' => []
         ]);
         
-        $event->start = $vars['start'];
-        $event->end = $vars['end'];
-        $event->all_day = $vars['all_day'];
+        // Update the values
+        $event->start = $this->request->query('start');
+        $event->end = $this->request->query('end');
+        $event->all_day = (bool) $this->request->query('all_day');
+        
+        // Save the changes
         $this->Events->save($event);
 	}
 
