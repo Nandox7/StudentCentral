@@ -5442,3 +5442,64 @@
 [10-Nov-2015 20:11:04 UTC] PHP  13. Composer\Autoload\ClassLoader->loadClass() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
 [10-Nov-2015 20:11:04 UTC] PHP  14. Composer\Autoload\includeFile() /home/ubuntu/workspace/StudentCentral/vendor/composer/ClassLoader.php:301
 [10-Nov-2015 20:11:04 UTC] PHP  15. include() /home/ubuntu/workspace/StudentCentral/vendor/composer/ClassLoader.php:412
+[12-Nov-2015 20:30:45 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ubuntu/workspace/StudentCentral/src/Template/Layout/default.ctp on line 144
+[12-Nov-2015 20:30:45 UTC] PHP Stack trace:
+[12-Nov-2015 20:30:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[12-Nov-2015 20:30:45 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[12-Nov-2015 20:30:45 UTC] PHP   3. Cake\Routing\Dispatcher->_invoke() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:87
+[12-Nov-2015 20:30:45 UTC] PHP   4. Cake\Controller\Controller->invokeAction() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:114
+[12-Nov-2015 20:30:45 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429}() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[12-Nov-2015 20:30:45 UTC] PHP   6. App\Controller\PagesController->display() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[12-Nov-2015 20:30:45 UTC] PHP   7. Cake\Controller\Controller->render() /home/ubuntu/workspace/StudentCentral/src/Controller/PagesController.php:57
+[12-Nov-2015 20:30:45 UTC] PHP   8. Cake\View\View->render() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:611
+[12-Nov-2015 20:30:45 UTC] PHP   9. Cake\View\View->renderLayout() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/View/View.php:583
+[12-Nov-2015 20:30:45 UTC] PHP  10. Cake\View\View->_render() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/View/View.php:624
+[12-Nov-2015 20:30:45 UTC] PHP  11. Cake\View\View->_evaluate() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/View/View.php:930
+[12-Nov-2015 20:53:09 UTC] PHP Fatal error:  Call to a member function find() on a non-object in /home/ubuntu/workspace/StudentCentral/src/Controller/EventsController.php on line 130
+[12-Nov-2015 20:53:09 UTC] PHP Stack trace:
+[12-Nov-2015 20:53:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[12-Nov-2015 20:53:09 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[12-Nov-2015 20:53:09 UTC] PHP   3. Cake\Routing\Dispatcher->_invoke() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:87
+[12-Nov-2015 20:53:09 UTC] PHP   4. Cake\Controller\Controller->invokeAction() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:114
+[12-Nov-2015 20:53:09 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429}() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[12-Nov-2015 20:53:09 UTC] PHP   6. App\Controller\EventsController->feed() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[12-Nov-2015 21:39:42 UTC] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in /home/ubuntu/workspace/StudentCentral/src/Controller/EventsController.php on line 141
+[12-Nov-2015 21:39:42 UTC] PHP Stack trace:
+[12-Nov-2015 21:39:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[12-Nov-2015 21:39:42 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[12-Nov-2015 21:39:42 UTC] PHP   3. Cake\Routing\Dispatcher->dispatchEvent() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:62
+[12-Nov-2015 21:39:42 UTC] PHP   4. Cake\Event\EventManager->dispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php:78
+[12-Nov-2015 21:39:42 UTC] PHP   5. Cake\Event\EventManager->_callListener() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:355
+[12-Nov-2015 21:39:42 UTC] PHP   6. Cake\Routing\DispatcherFilter->handle() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:389
+[12-Nov-2015 21:39:42 UTC] PHP   7. Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php:145
+[12-Nov-2015 21:39:42 UTC] PHP   8. Cake\Routing\Filter\ControllerFactoryFilter->_getController() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:50
+[12-Nov-2015 21:39:42 UTC] PHP   9. Cake\Core\App::className() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:82
+[12-Nov-2015 21:39:42 UTC] PHP  10. Cake\Core\App::_classExistsInBase() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:64
+[12-Nov-2015 21:39:42 UTC] PHP  11. class_exists() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[12-Nov-2015 21:39:42 UTC] PHP  12. spl_autoload_call() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[12-Nov-2015 21:39:42 UTC] PHP  13. Composer\Autoload\ClassLoader->loadClass() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[12-Nov-2015 21:39:42 UTC] PHP  14. Composer\Autoload\includeFile() /home/ubuntu/workspace/StudentCentral/vendor/composer/ClassLoader.php:301
+[12-Nov-2015 21:39:52 UTC] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in /home/ubuntu/workspace/StudentCentral/src/Controller/EventsController.php on line 141
+[12-Nov-2015 21:39:52 UTC] PHP Stack trace:
+[12-Nov-2015 21:39:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[12-Nov-2015 21:39:52 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[12-Nov-2015 21:39:52 UTC] PHP   3. Cake\Routing\Dispatcher->dispatchEvent() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:62
+[12-Nov-2015 21:39:52 UTC] PHP   4. Cake\Event\EventManager->dispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php:78
+[12-Nov-2015 21:39:52 UTC] PHP   5. Cake\Event\EventManager->_callListener() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:355
+[12-Nov-2015 21:39:52 UTC] PHP   6. Cake\Routing\DispatcherFilter->handle() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:389
+[12-Nov-2015 21:39:52 UTC] PHP   7. Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php:145
+[12-Nov-2015 21:39:52 UTC] PHP   8. Cake\Routing\Filter\ControllerFactoryFilter->_getController() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:50
+[12-Nov-2015 21:39:52 UTC] PHP   9. Cake\Core\App::className() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:82
+[12-Nov-2015 21:39:52 UTC] PHP  10. Cake\Core\App::_classExistsInBase() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:64
+[12-Nov-2015 21:39:52 UTC] PHP  11. class_exists() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[12-Nov-2015 21:39:52 UTC] PHP  12. spl_autoload_call() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[12-Nov-2015 21:39:52 UTC] PHP  13. Composer\Autoload\ClassLoader->loadClass() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[12-Nov-2015 21:39:52 UTC] PHP  14. Composer\Autoload\includeFile() /home/ubuntu/workspace/StudentCentral/vendor/composer/ClassLoader.php:301
+[12-Nov-2015 21:42:03 UTC] PHP Fatal error:  Call to a member function identify() on a non-object in /home/ubuntu/workspace/StudentCentral/src/Controller/EventsController.php on line 126
+[12-Nov-2015 21:42:03 UTC] PHP Stack trace:
+[12-Nov-2015 21:42:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[12-Nov-2015 21:42:03 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[12-Nov-2015 21:42:03 UTC] PHP   3. Cake\Routing\Dispatcher->_invoke() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:87
+[12-Nov-2015 21:42:03 UTC] PHP   4. Cake\Controller\Controller->invokeAction() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:114
+[12-Nov-2015 21:42:03 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429}() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[12-Nov-2015 21:42:03 UTC] PHP   6. App\Controller\EventsController->feed() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429

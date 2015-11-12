@@ -37,6 +37,7 @@ $(document).ready(function() {
         	console.log("Day clicked...");
     	},
 		eventRender: function(event, element) {
+			console.log("Event details: " + event.details);
         	if (event.details) {
 	        	element.qtip({
 					content: event.details,
@@ -52,6 +53,7 @@ $(document).ready(function() {
 						tip: 'leftTop'
 					}
 	        	});
+	        	console.log('Event added...');
         	}
     	},
 		eventDragStart: function(event) {

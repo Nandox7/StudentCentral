@@ -15,6 +15,7 @@ class EventsController extends AppController
     {
         parent::initialize();
         $this->loadComponent('RequestHandler');
+
     }
 
     var $name = 'Events';
@@ -122,10 +123,23 @@ class EventsController extends AppController
     
     // The feed action is called from "webroot/js/ready.js" to get the list of events (JSON)
 	function feed($id=null) {
-		//$this->viewBuilder()->layout("ajax");
-		$vars = $this->params['url'];
-		$conditions = array('conditions' => array('UNIX_TIMESTAMP(start) >=' => $vars['start'], 'UNIX_TIMESTAMP(start) <=' => $vars['end']));
-		$events = $this->Events->find()->all();
+
+        $this->Auth->identify();
+        
+        // Get params from URL for start and end date		
+		$startdate = $this->request->query('start');
+		$enddate = $this->request->query('end');
+		
+		// Fetch all results withing the specified dates
+        $events = $this->Events->find('all')
+            ->where([
+                'start >=' => $startdate, 
+                'end <=' => $enddate,
+                'student_id =' => 1
+                ]);
+		
+		// Enable to output SQL query
+		//debug($events);
 
 		foreach($events as $event) {
 			if($event['all_day'] == 1) {
@@ -142,11 +156,12 @@ class EventsController extends AppController
 					'end' => $end,
 					'allDay' => $allday,
 					'url' => '/events/view/'.$event['id'],
-					'details' => $event['Event']['details'],
+					//'details' => $event['details'],
 					'className' => $event['EventType']['color']
 			);
 		}
 		
+		// Ouput json formated data
 		$this->set("json", json_encode($data));
 	}
 	
