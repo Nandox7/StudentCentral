@@ -19,7 +19,7 @@ class GroupsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Students', 'Courses']
+            'contain' => ['Users', 'Courses']
         ];
         $this->set('groups', $this->paginate($this->Groups));
         $this->set('_serialize', ['groups']);
@@ -35,7 +35,7 @@ class GroupsController extends AppController
     public function view($id = null)
     {
         $group = $this->Groups->get($id, [
-            'contain' => ['Students', 'Courses']
+            'contain' => ['Users', 'Courses']
         ]);
         $this->set('group', $group);
         $this->set('_serialize', ['group']);
@@ -58,9 +58,9 @@ class GroupsController extends AppController
                 $this->Flash->error(__('The group could not be saved. Please, try again.'));
             }
         }
-        $students = $this->Groups->Students->find('list', ['limit' => 200]);
+        $students = $this->Groups->Users->find('list', ['limit' => 200]);
         $courses = $this->Groups->Courses->find('list', ['limit' => 200]);
-        $this->set(compact('group', 'students', 'courses'));
+        $this->set(compact('group', 'users', 'courses'));
         $this->set('_serialize', ['group']);
     }
 
@@ -85,9 +85,9 @@ class GroupsController extends AppController
                 $this->Flash->error(__('The group could not be saved. Please, try again.'));
             }
         }
-        $students = $this->Groups->Students->find('list', ['limit' => 200]);
+        $students = $this->Groups->Users->find('list', ['limit' => 200]);
         $courses = $this->Groups->Courses->find('list', ['limit' => 200]);
-        $this->set(compact('group', 'students', 'courses'));
+        $this->set(compact('group', 'users', 'courses'));
         $this->set('_serialize', ['group']);
     }
 

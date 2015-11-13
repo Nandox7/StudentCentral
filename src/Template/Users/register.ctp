@@ -27,9 +27,6 @@
 					<?= $this->Form->input('email') ?>
 					<?= $this->Form->input('username') ?>
 					<?= $this->Form->input('password') ?>
-					<?= $this->Form->input('role', [
-						'options' => ['author' => 'Author']
-					]) ?>
 				</fieldset>
 				<?= $this->Form->button(__('Submit')); ?>
 				<?= $this->Form->end() ?>

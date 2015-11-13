@@ -61,9 +61,13 @@ class EventsController extends AppController
      */
     public function add()
     {
+        // Get current user id
+        $user_id = $user_id =  $this->Auth->user('id');
+        
         $event = $this->Events->newEntity();
         if ($this->request->is('post')) {
             $event = $this->Events->patchEntity($event, $this->request->data);
+            $event['user_id'] = $user_id;
             if ($this->Events->save($event)) {
                 $this->Flash->success(__('The event has been saved.'));
                 return $this->redirect(['action' => 'index']);
@@ -124,7 +128,7 @@ class EventsController extends AppController
     // The feed action is called from "webroot/js/ready.js" to get the list of events (JSON)
 	function feed($id=null) {
 
-        $this->Auth->identify();
+        $user_id =  $this->Auth->user('id');
         
         // Get params from URL for start and end date		
 		$startdate = $this->request->query('start');
@@ -135,7 +139,7 @@ class EventsController extends AppController
             ->where([
                 'start >=' => $startdate, 
                 'end <=' => $enddate,
-                'student_id =' => 1
+                'user_id =' => $user_id
                 ]);
 		
 		// Enable to output SQL query

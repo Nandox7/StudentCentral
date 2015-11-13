@@ -5503,3 +5503,121 @@
 [12-Nov-2015 21:42:03 UTC] PHP   4. Cake\Controller\Controller->invokeAction() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:114
 [12-Nov-2015 21:42:03 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429}() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
 [12-Nov-2015 21:42:03 UTC] PHP   6. App\Controller\EventsController->feed() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[12-Nov-2015 22:20:19 UTC] PHP Fatal error:  Call to a member function id() on a non-object in /home/ubuntu/workspace/StudentCentral/src/Controller/AppController.php on line 46
+[12-Nov-2015 22:20:19 UTC] PHP Stack trace:
+[12-Nov-2015 22:20:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[12-Nov-2015 22:20:19 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[12-Nov-2015 22:20:19 UTC] PHP   3. Cake\Routing\Dispatcher->dispatchEvent() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:62
+[12-Nov-2015 22:20:19 UTC] PHP   4. Cake\Event\EventManager->dispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php:78
+[12-Nov-2015 22:20:19 UTC] PHP   5. Cake\Event\EventManager->_callListener() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:355
+[12-Nov-2015 22:20:19 UTC] PHP   6. Cake\Routing\DispatcherFilter->handle() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:389
+[12-Nov-2015 22:20:19 UTC] PHP   7. Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php:145
+[12-Nov-2015 22:20:19 UTC] PHP   8. Cake\Routing\Filter\ControllerFactoryFilter->_getController() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:50
+[12-Nov-2015 22:20:19 UTC] PHP   9. ReflectionClass->newInstance() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:91
+[12-Nov-2015 22:20:19 UTC] PHP  10. Cake\Controller\Controller->__construct() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:91
+[12-Nov-2015 22:20:19 UTC] PHP  11. App\Controller\AppController->initialize() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:262
+[12-Nov-2015 22:21:44 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/StudentCentral/src/Controller/DashboardController.php on line 12
+[12-Nov-2015 22:21:44 UTC] PHP Stack trace:
+[12-Nov-2015 22:21:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[12-Nov-2015 22:21:44 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[12-Nov-2015 22:21:44 UTC] PHP   3. Cake\Routing\Dispatcher->dispatchEvent() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:62
+[12-Nov-2015 22:21:44 UTC] PHP   4. Cake\Event\EventManager->dispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php:78
+[12-Nov-2015 22:21:44 UTC] PHP   5. Cake\Event\EventManager->_callListener() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:355
+[12-Nov-2015 22:21:44 UTC] PHP   6. Cake\Routing\DispatcherFilter->handle() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:389
+[12-Nov-2015 22:21:44 UTC] PHP   7. Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php:145
+[12-Nov-2015 22:21:44 UTC] PHP   8. Cake\Routing\Filter\ControllerFactoryFilter->_getController() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:50
+[12-Nov-2015 22:21:44 UTC] PHP   9. Cake\Core\App::className() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:82
+[12-Nov-2015 22:21:44 UTC] PHP  10. Cake\Core\App::_classExistsInBase() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:64
+[12-Nov-2015 22:21:44 UTC] PHP  11. class_exists() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[12-Nov-2015 22:21:44 UTC] PHP  12. spl_autoload_call() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[12-Nov-2015 22:21:44 UTC] PHP  13. Composer\Autoload\ClassLoader->loadClass() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Core/App.php:87
+[12-Nov-2015 22:21:44 UTC] PHP  14. Composer\Autoload\includeFile() /home/ubuntu/workspace/StudentCentral/vendor/composer/ClassLoader.php:301
+[12-Nov-2015 22:23:45 UTC] PHP Fatal error:  Class 'App\Controller\Configure' not found in /home/ubuntu/workspace/StudentCentral/src/Controller/AppController.php on line 45
+[12-Nov-2015 22:23:45 UTC] PHP Stack trace:
+[12-Nov-2015 22:23:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[12-Nov-2015 22:23:45 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[12-Nov-2015 22:23:45 UTC] PHP   3. Cake\Routing\Dispatcher->dispatchEvent() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:62
+[12-Nov-2015 22:23:45 UTC] PHP   4. Cake\Event\EventManager->dispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php:78
+[12-Nov-2015 22:23:45 UTC] PHP   5. Cake\Event\EventManager->_callListener() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:355
+[12-Nov-2015 22:23:45 UTC] PHP   6. Cake\Routing\DispatcherFilter->handle() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:389
+[12-Nov-2015 22:23:45 UTC] PHP   7. Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php:145
+[12-Nov-2015 22:23:45 UTC] PHP   8. Cake\Routing\Filter\ControllerFactoryFilter->_getController() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:50
+[12-Nov-2015 22:23:45 UTC] PHP   9. ReflectionClass->newInstance() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:91
+[12-Nov-2015 22:23:45 UTC] PHP  10. Cake\Controller\Controller->__construct() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:91
+[12-Nov-2015 22:23:45 UTC] PHP  11. App\Controller\AppController->initialize() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:262
+[12-Nov-2015 23:25:37 UTC] PHP Fatal error:  Class 'App\Controller\Configure' not found in /home/ubuntu/workspace/StudentCentral/src/Controller/AppController.php on line 45
+[12-Nov-2015 23:25:37 UTC] PHP Stack trace:
+[12-Nov-2015 23:25:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[12-Nov-2015 23:25:37 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[12-Nov-2015 23:25:37 UTC] PHP   3. Cake\Routing\Dispatcher->dispatchEvent() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:62
+[12-Nov-2015 23:25:37 UTC] PHP   4. Cake\Event\EventManager->dispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php:78
+[12-Nov-2015 23:25:37 UTC] PHP   5. Cake\Event\EventManager->_callListener() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:355
+[12-Nov-2015 23:25:37 UTC] PHP   6. Cake\Routing\DispatcherFilter->handle() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:389
+[12-Nov-2015 23:25:37 UTC] PHP   7. Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php:145
+[12-Nov-2015 23:25:37 UTC] PHP   8. Cake\Routing\Filter\ControllerFactoryFilter->_getController() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:50
+[12-Nov-2015 23:25:37 UTC] PHP   9. ReflectionClass->newInstance() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:91
+[12-Nov-2015 23:25:37 UTC] PHP  10. Cake\Controller\Controller->__construct() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:91
+[12-Nov-2015 23:25:37 UTC] PHP  11. App\Controller\AppController->initialize() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:262
+[12-Nov-2015 23:27:12 UTC] PHP Fatal error:  Class 'App\Controller\Configure' not found in /home/ubuntu/workspace/StudentCentral/src/Controller/AppController.php on line 45
+[12-Nov-2015 23:27:12 UTC] PHP Stack trace:
+[12-Nov-2015 23:27:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[12-Nov-2015 23:27:12 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[12-Nov-2015 23:27:12 UTC] PHP   3. Cake\Routing\Dispatcher->dispatchEvent() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:62
+[12-Nov-2015 23:27:12 UTC] PHP   4. Cake\Event\EventManager->dispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php:78
+[12-Nov-2015 23:27:12 UTC] PHP   5. Cake\Event\EventManager->_callListener() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:355
+[12-Nov-2015 23:27:12 UTC] PHP   6. Cake\Routing\DispatcherFilter->handle() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:389
+[12-Nov-2015 23:27:12 UTC] PHP   7. Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php:145
+[12-Nov-2015 23:27:12 UTC] PHP   8. Cake\Routing\Filter\ControllerFactoryFilter->_getController() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:50
+[12-Nov-2015 23:27:12 UTC] PHP   9. ReflectionClass->newInstance() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:91
+[12-Nov-2015 23:27:12 UTC] PHP  10. Cake\Controller\Controller->__construct() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:91
+[12-Nov-2015 23:27:12 UTC] PHP  11. App\Controller\AppController->initialize() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:262
+[12-Nov-2015 23:27:19 UTC] PHP Fatal error:  Class 'App\Controller\Configure' not found in /home/ubuntu/workspace/StudentCentral/src/Controller/AppController.php on line 45
+[12-Nov-2015 23:27:19 UTC] PHP Stack trace:
+[12-Nov-2015 23:27:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[12-Nov-2015 23:27:19 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[12-Nov-2015 23:27:19 UTC] PHP   3. Cake\Routing\Dispatcher->dispatchEvent() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:62
+[12-Nov-2015 23:27:19 UTC] PHP   4. Cake\Event\EventManager->dispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php:78
+[12-Nov-2015 23:27:19 UTC] PHP   5. Cake\Event\EventManager->_callListener() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:355
+[12-Nov-2015 23:27:19 UTC] PHP   6. Cake\Routing\DispatcherFilter->handle() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:389
+[12-Nov-2015 23:27:19 UTC] PHP   7. Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php:145
+[12-Nov-2015 23:27:19 UTC] PHP   8. Cake\Routing\Filter\ControllerFactoryFilter->_getController() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:50
+[12-Nov-2015 23:27:19 UTC] PHP   9. ReflectionClass->newInstance() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:91
+[12-Nov-2015 23:27:19 UTC] PHP  10. Cake\Controller\Controller->__construct() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:91
+[12-Nov-2015 23:27:19 UTC] PHP  11. App\Controller\AppController->initialize() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:262
+[12-Nov-2015 23:38:11 UTC] PHP Fatal error:  Class 'App\Controller\Configure' not found in /home/ubuntu/workspace/StudentCentral/src/Controller/AppController.php on line 45
+[12-Nov-2015 23:38:11 UTC] PHP Stack trace:
+[12-Nov-2015 23:38:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[12-Nov-2015 23:38:11 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[12-Nov-2015 23:38:11 UTC] PHP   3. Cake\Routing\Dispatcher->dispatchEvent() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:62
+[12-Nov-2015 23:38:11 UTC] PHP   4. Cake\Event\EventManager->dispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php:78
+[12-Nov-2015 23:38:11 UTC] PHP   5. Cake\Event\EventManager->_callListener() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:355
+[12-Nov-2015 23:38:11 UTC] PHP   6. Cake\Routing\DispatcherFilter->handle() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Event/EventManager.php:389
+[12-Nov-2015 23:38:11 UTC] PHP   7. Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php:145
+[12-Nov-2015 23:38:11 UTC] PHP   8. Cake\Routing\Filter\ControllerFactoryFilter->_getController() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:50
+[12-Nov-2015 23:38:11 UTC] PHP   9. ReflectionClass->newInstance() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:91
+[12-Nov-2015 23:38:11 UTC] PHP  10. Cake\Controller\Controller->__construct() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php:91
+[12-Nov-2015 23:38:11 UTC] PHP  11. App\Controller\AppController->initialize() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:262
+[12-Nov-2015 23:40:09 UTC] PHP Fatal error:  Call to a member function id() on a non-object in /home/ubuntu/workspace/StudentCentral/src/Controller/DashboardController.php on line 10
+[12-Nov-2015 23:40:09 UTC] PHP Stack trace:
+[12-Nov-2015 23:40:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[12-Nov-2015 23:40:09 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[12-Nov-2015 23:40:09 UTC] PHP   3. Cake\Routing\Dispatcher->_invoke() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:87
+[12-Nov-2015 23:40:09 UTC] PHP   4. Cake\Controller\Controller->invokeAction() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:114
+[12-Nov-2015 23:40:09 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429}() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[12-Nov-2015 23:40:09 UTC] PHP   6. App\Controller\DashboardController->index() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[12-Nov-2015 23:40:32 UTC] PHP Fatal error:  Call to a member function identify() on a non-object in /home/ubuntu/workspace/StudentCentral/src/Controller/EventsController.php on line 127
+[12-Nov-2015 23:40:32 UTC] PHP Stack trace:
+[12-Nov-2015 23:40:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[12-Nov-2015 23:40:32 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[12-Nov-2015 23:40:32 UTC] PHP   3. Cake\Routing\Dispatcher->_invoke() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:87
+[12-Nov-2015 23:40:32 UTC] PHP   4. Cake\Controller\Controller->invokeAction() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:114
+[12-Nov-2015 23:40:32 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429}() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[12-Nov-2015 23:40:32 UTC] PHP   6. App\Controller\EventsController->feed() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[12-Nov-2015 23:40:36 UTC] PHP Fatal error:  Call to a member function identify() on a non-object in /home/ubuntu/workspace/StudentCentral/src/Controller/EventsController.php on line 127
+[12-Nov-2015 23:40:36 UTC] PHP Stack trace:
+[12-Nov-2015 23:40:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/StudentCentral/webroot/index.php:0
+[12-Nov-2015 23:40:36 UTC] PHP   2. Cake\Routing\Dispatcher->dispatch() /home/ubuntu/workspace/StudentCentral/webroot/index.php:37
+[12-Nov-2015 23:40:36 UTC] PHP   3. Cake\Routing\Dispatcher->_invoke() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:87
+[12-Nov-2015 23:40:36 UTC] PHP   4. Cake\Controller\Controller->invokeAction() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Routing/Dispatcher.php:114
+[12-Nov-2015 23:40:36 UTC] PHP   5. call_user_func_array:{/home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429}() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429
+[12-Nov-2015 23:40:36 UTC] PHP   6. App\Controller\EventsController->feed() /home/ubuntu/workspace/StudentCentral/vendor/cakephp/cakephp/src/Controller/Controller.php:429

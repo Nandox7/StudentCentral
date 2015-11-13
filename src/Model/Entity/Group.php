@@ -7,11 +7,11 @@ use Cake\ORM\Entity;
  * Group Entity.
  *
  * @property int $id
- * @property int $student_id
- * @property \App\Model\Entity\Student $student
+ * @property int $user_id
  * @property int $course_id
  * @property \App\Model\Entity\Course $course
- * @property int $group_name
+ * @property string $group_name
+ * @property \App\Model\Entity\Student $student
  */
 class Group extends Entity
 {

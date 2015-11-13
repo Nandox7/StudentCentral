@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
 /**
  * Groups Model
  *
- * @property \Cake\ORM\Association\BelongsTo $Students
+ * @property \Cake\ORM\Association\BelongsTo $Users
  * @property \Cake\ORM\Association\BelongsTo $Courses
  */
 class GroupsTable extends Table
@@ -30,8 +30,8 @@ class GroupsTable extends Table
         $this->displayField('group_name');
         $this->primaryKey('id');
 
-        $this->belongsTo('Students', [
-            'foreignKey' => 'student_id',
+        $this->belongsTo('Users', [
+            'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Courses', [
@@ -53,7 +53,6 @@ class GroupsTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->add('group_name', 'valid', ['rule' => 'numeric'])
             ->requirePresence('group_name', 'create')
             ->notEmpty('group_name');
 
@@ -69,7 +68,7 @@ class GroupsTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['student_id'], 'Students'));
+        $rules->add($rules->existsIn(['user_id'], 'Users'));
         $rules->add($rules->existsIn(['course_id'], 'Courses'));
         return $rules;
     }

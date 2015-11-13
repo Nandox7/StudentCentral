@@ -18,6 +18,7 @@ use Cake\ORM\Entity;
  * @property bool $active
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
+ * @property int $user_id
  */
 class Event extends Entity
 {
