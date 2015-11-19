@@ -129,7 +129,7 @@ $cakeDescription = __d('cake_dev', 'Student Central');
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">schedule</i>schedule</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>grades</a>
           <a class="mdl-navigation__link" href="/groups"><span class="material-icons mdl-badge" data-badge="1">group</span></i>groups</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">lock</i>logout</a>
+          <a class="mdl-navigation__link" href="/users/logout"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">lock</i>logout</a>
           <div class="mdl-layout-spacer"></div>
         </nav>
       </div>
