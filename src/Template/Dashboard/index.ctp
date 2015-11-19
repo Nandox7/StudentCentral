@@ -11,20 +11,18 @@
         <div class="mdl-grid">
           <!-- Calendar -->
           <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
-            <div id="calendar-block">
-                    <div id='calendar'></div>
-            </div>
+            
           </div>
           <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
             <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
               <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
-                <h2 class="mdl-card__title-text">Today's Events</h2>
+                <h2 class="mdl-card__title-text">Today's</h2>
               </div>
               <div class="mdl-card__supporting-text mdl-color-text--grey-600">
                 See today's events...
               </div>
               <div class="mdl-card__actions mdl-card--border">
-                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">See Events</a>
+                <a href="" class="mdl-button mdl-js-button mdl-js-ripple-effect">See Events</a>
               </div>
             </div>
             <div class="demo-separator mdl-cell--1-col"></div>
@@ -60,9 +58,45 @@
                   </ul>
               </div>
               <div class="mdl-card__actions mdl-card--border">
+			</div>
+			
+			<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+  <div class="mdl-tabs__tab-bar">
+      <a href="#starks-panel" class="mdl-tabs__tab is-active">Tasks</a>
+      <a href="#lannisters-panel" class="mdl-tabs__tab">Exams</a>
+      <a href="#targaryens-panel" class="mdl-tabs__tab">Classes</a>
+  </div>
 
-              </div>
+  <div class="mdl-tabs__panel is-active" id="starks-panel">
+    <ul>
+      <li>Eddard</li>
+      <li>Catelyn</li>
+      <li>Robb</li>
+      <li>Sansa</li>
+      <li>Brandon</li>
+      <li>Arya</li>
+      <li>Rickon</li>
+    </ul>
+  </div>
+  <div class="mdl-tabs__panel" id="lannisters-panel">
+    <ul>
+      <li>Tywin</li>
+      <li>Cersei</li>
+      <li>Jamie</li>
+      <li>Tyrion</li>
+    </ul>
+  </div>
+  <div class="mdl-tabs__panel" id="targaryens-panel">
+    <ul>
+      <li>Viserys</li>
+      <li>Daenerys</li>
+    </ul>
+  </div>
+</div>
+			
             </div>
+            
+            
           </div>
         </div>
       </main>

@@ -94,15 +94,15 @@ $cakeDescription = __d('cake_dev', 'Student Central');
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Welcome to your dashboard</span>
+          <span class="mdl-layout-title">Welcome to your dashboard Fernando<i class="material-icons">face</i></span>
           <div class="mdl-layout-spacer"></div>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
             <i class="material-icons">more_vert</i>
           </button>
           <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
-            <li class="mdl-menu__item">About</li>
-            <li class="mdl-menu__item">Contact Admin</li>
-            <li class="mdl-menu__item">Log Issue</li>
+            <li class="mdl-menu__item">About Student Central</li>
+            <li class="mdl-menu__item">Log an Issue</li>
+            <li class="mdl-menu__item">Contact an Administrator</li>
           </ul>
         </div>
       </header>
@@ -125,7 +125,7 @@ $cakeDescription = __d('cake_dev', 'Student Central');
           <a class="mdl-navigation__link" href="/dashboard/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>dashboard</a>
           <a class="mdl-navigation__link" href="/full_calendar"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">today</i>calendar</a>
           <a class="mdl-navigation__link" href=""><span class="material-icons mdl-badge" data-badge="4">list</span></i></i>tasks</a>
-          <a class="mdl-navigation__link" href="/full_calendar/event_types/view/4"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assessment</i>exams</a>
+          <a class="mdl-navigation__link" href="/event_types/view/4"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assessment</i>exams</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">schedule</i>schedule</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>grades</a>
           <a class="mdl-navigation__link" href="/groups"><span class="material-icons mdl-badge" data-badge="1">group</span></i>groups</a>
