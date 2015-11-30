@@ -1,14 +1,14 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\GroupsTable;
+use App\Model\Table\GroupUsersTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\GroupsTable Test Case
+ * App\Model\Table\GroupUsersTable Test Case
  */
-class GroupsTableTest extends TestCase
+class GroupUsersTableTest extends TestCase
 {
 
     /**
@@ -17,10 +17,11 @@ class GroupsTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.groups',
+        'app.group_users',
         'app.users',
         'app.courses',
         'app.colleges',
+        'app.groups',
         'app.students',
         'app.events',
         'app.event_types'
@@ -34,8 +35,8 @@ class GroupsTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Groups') ? [] : ['className' => 'App\Model\Table\GroupsTable'];
-        $this->Groups = TableRegistry::get('Groups', $config);
+        $config = TableRegistry::exists('GroupUsers') ? [] : ['className' => 'App\Model\Table\GroupUsersTable'];
+        $this->GroupUsers = TableRegistry::get('GroupUsers', $config);
     }
 
     /**
@@ -45,7 +46,7 @@ class GroupsTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Groups);
+        unset($this->GroupUsers);
 
         parent::tearDown();
     }
@@ -56,16 +57,6 @@ class GroupsTableTest extends TestCase
      * @return void
      */
     public function testInitialize()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test validationDefault method
-     *
-     * @return void
-     */
-    public function testValidationDefault()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

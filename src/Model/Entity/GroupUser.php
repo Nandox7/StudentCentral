@@ -4,16 +4,16 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Group Entity.
+ * GroupUser Entity.
  *
  * @property int $id
+ * @property int $group_id
+ * @property \App\Model\Entity\Group $group
  * @property int $user_id
  * @property \App\Model\Entity\User $user
- * @property int $course_id
- * @property \App\Model\Entity\Course $course
- * @property string $group_name
+ * @property int $is_admin
  */
-class Group extends Entity
+class GroupUser extends Entity
 {
 
     /**
@@ -27,6 +27,7 @@ class Group extends Entity
      */
     protected $_accessible = [
         '*' => true,
-        'id' => false,
+        'group_id' => false,
+        'user_id' => false,
     ];
 }

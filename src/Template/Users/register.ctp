@@ -29,6 +29,7 @@
 					<?= $this->Form->input('password') ?>
 				</fieldset>
 				<?= $this->Form->button(__('Submit')); ?>
+				<input type="submit" name="Submit"/>
 				<?= $this->Form->end() ?>
 				<?php
 			}

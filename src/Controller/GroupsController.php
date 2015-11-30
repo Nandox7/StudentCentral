@@ -2,30 +2,35 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Groups Controller
  *
- * @property \App\Model\Table\GroupsTable $Groups
+ * @property \App\Model\Table\GroupUsersTable $GroupUsers
  */
 class GroupsController extends AppController
 {
 
-    /**
-     * Index method
-     *
-     * @return void
-     */
+
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Users', 'Courses']
-        ];
-        $this->set('groups', $this->paginate($this->Groups));
-        $this->set('_serialize', ['groups']);
+        // Get ID of current user
+        $id = $this->Auth->user('id');
+     
+        // Load model for the Group Users
+        $this->loadModel('GroupUsers');
+        
+        $my_groups = $this->GroupUsers->find("all", ['contain' => ['Groups', 'Users']])
+            ->where(['user_id =' => $id]);
+        
+        $this->set('myGroups', $this->paginate($my_groups));
+        $this->set('myGroups', $my_groups);
+        //$this->set('_serialize', ['myGroups']);
+    
     }
 
-    /**
+     /**
      * View method
      *
      * @param string|null $id Group id.
@@ -35,12 +40,21 @@ class GroupsController extends AppController
     public function view($id = null)
     {
         $group = $this->Groups->get($id, [
-            'contain' => ['Users', 'Courses']
+            'contain' => ['Courses', 'GroupUsers']
         ]);
+        
+        // Load model for the Group Users
+        $this->loadModel('GroupUsers');
+        
+        $groupUsers = $this->GroupUsers->find("all", ['contain' => ['Groups', 'Users']])
+            ->where(['group_id =' => $id]);
+        
+        $this->set('groupUsers', $this->paginate($groupUsers));
+        $this->set('groupUsers', $groupUsers);
+        
         $this->set('group', $group);
-        $this->set('_serialize', ['group']);
+        $this->set('_serialize', ['group', 'groupUsers']);
     }
-
     /**
      * Add method
      *
@@ -49,18 +63,35 @@ class GroupsController extends AppController
     public function add()
     {
         $group = $this->Groups->newEntity();
+        
+        //Also add a new user for the group that is the admin that created it
+        $groupUsersTable = TableRegistry::get('GroupUsers');
+        $groupUser = $groupUsersTable->newEntity();
+        
         if ($this->request->is('post')) {
             $group = $this->Groups->patchEntity($group, $this->request->data);
+            $group->course_id = $this->Auth->user('course_id');
+            
             if ($this->Groups->save($group)) {
+                // also save default admin user
+                $groupUser->group_id = $group->id; // ID of the newly created grroup
+                $groupUser->user_id = $this->Auth->user('id');;
+                $groupUser->is_admin = 1;
+                $groupUsersTable->save($groupUser);
                 $this->Flash->success(__('The group has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('The group could not be saved. Please, try again.'));
             }
         }
-        $students = $this->Groups->Users->find('list', ['limit' => 200]);
-        $courses = $this->Groups->Courses->find('list', ['limit' => 200]);
-        $this->set(compact('group', 'users', 'courses'));
+        
+        //$groups = $this->GroupUsers->Groups->find('list', ['limit' => 200]);
+        //$users = $this->GroupUsers->Users->find('list', ['limit' => 200]);
+        
+        //$this->set(compact('groupUser', 'groups', 'users'));
+        //$this->set('_serialize', ['groupUser']);
+        //$courses = $this->Groups->Courses->find('list', ['limit' => 200]);
+        $this->set(compact('group', 'courses'));
         $this->set('_serialize', ['group']);
     }
 
@@ -85,9 +116,8 @@ class GroupsController extends AppController
                 $this->Flash->error(__('The group could not be saved. Please, try again.'));
             }
         }
-        $students = $this->Groups->Users->find('list', ['limit' => 200]);
         $courses = $this->Groups->Courses->find('list', ['limit' => 200]);
-        $this->set(compact('group', 'users', 'courses'));
+        $this->set(compact('group', 'courses'));
         $this->set('_serialize', ['group']);
     }
 

@@ -1,19 +1,19 @@
 <?php
 namespace App\Model\Table;
 
-use App\Model\Entity\Group;
+use App\Model\Entity\GroupUser;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Groups Model
+ * GroupUsers Model
  *
+ * @property \Cake\ORM\Association\BelongsTo $Groups
  * @property \Cake\ORM\Association\BelongsTo $Users
- * @property \Cake\ORM\Association\BelongsTo $Courses
  */
-class GroupsTable extends Table
+class GroupUsersTable extends Table
 {
 
     /**
@@ -26,17 +26,17 @@ class GroupsTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('groups');
+        $this->table('group_users');
         $this->displayField('group_name');
-        $this->primaryKey('id');
+        $this->primaryKey(['group_id', 'user_id']);
 
-        $this->belongsTo('Courses', [
-            'foreignKey' => 'course_id',
+        $this->belongsTo('Groups', [
+            'foreignKey' => 'group_id',
             'joinType' => 'INNER'
         ]);
-        
-        $this->hasMany('GroupUsers', [
-            'className' => 'GroupUsers'
+        $this->belongsTo('Users', [
+            'foreignKey' => 'user_id',
+            'joinType' => 'INNER'
         ]);
     }
 
@@ -53,8 +53,9 @@ class GroupsTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->requirePresence('group_name', 'create')
-            ->notEmpty('group_name');
+            ->add('is_admin', 'valid', ['rule' => 'numeric'])
+            ->requirePresence('is_admin', 'create')
+            ->notEmpty('is_admin');
 
         return $validator;
     }
@@ -68,7 +69,8 @@ class GroupsTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['course_id'], 'Courses'));
+        $rules->add($rules->existsIn(['group_id'], 'Groups'));
+        $rules->add($rules->existsIn(['user_id'], 'Users'));
         return $rules;
     }
 }

@@ -62,7 +62,10 @@ class EventsController extends AppController
     public function add()
     {
         // Get current user id
-        $user_id = $user_id =  $this->Auth->user('id');
+        $user_id =  $this->Auth->user('id');
+        
+        // Load model for the Group Users
+        $this->loadModel('Groups');
         
         $event = $this->Events->newEntity();
         if ($this->request->is('post')) {
@@ -77,6 +80,7 @@ class EventsController extends AppController
         }
         $eventTypes = $this->Events->EventTypes->find('list', ['limit' => 200]);
         $this->set(compact('event', 'eventTypes'));
+        $this->set('groups', $this->Groups);
         $this->set('_serialize', ['event']);
     }
 

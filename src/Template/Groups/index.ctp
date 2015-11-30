@@ -1,39 +1,38 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Group'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Courses'), ['controller' => 'Courses', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Course'), ['controller' => 'Courses', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Create Group'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="groups index large-9 medium-8 columns content">
-    <h3><?= __('Groups') ?></h3>
+<div class="groupUsers index large-9 medium-8 columns content">
+    <h3><?= __('Groups List') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th><?= $this->Paginator->sort('id') ?></th>
-                <th><?= $this->Paginator->sort('user_id') ?></th>
-                <th><?= $this->Paginator->sort('course_id') ?></th>
-                <th><?= $this->Paginator->sort('group_name') ?></th>
+                <th><?= $this->Paginator->sort('group_id') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($groups as $group): ?>
+            <?php foreach ($myGroups as $group): ?>
             <tr>
-                <td><?= $this->Number->format($group->id) ?></td>
-                <td><?= $group->has('student') ? $this->Html->link($group->student->id, ['controller' => 'Students', 'action' => 'view', $group->student->id]) : '' ?></td>
-                <td><?= $group->has('course') ? $this->Html->link($group->course->id, ['controller' => 'Courses', 'action' => 'view', $group->course->id]) : '' ?></td>
-                <td><?= $this->Number->format($group->group_name) ?></td>
+                <td><?= $group->has('group') ? $this->Html->link($group->group->group_name, ['controller' => 'Groups', 'action' => 'view', $group->group->id]) : '' ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $group->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $group->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $group->id], ['confirm' => __('Are you sure you want to delete # {0}?', $group->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $group->group_id]) ?>
+                    
+                    <?php  if($group->is_admin) { ?>
+                    <?= $this->Html->link(__('Add User'), ['controller' => 'GroupUsers' ,'action' => 'add', $group->group_id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $group->group_id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $group->group_id], ['confirm' => __('Are you sure you want to delete # {0}?', $group->group_id)]) ?>
+                    
+                    <?php }; ?>
                 </td>
             </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
+    
+    <?php if ($this->Paginator->counter(array('groups' => '%count%')) == 0) { ?>
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
@@ -42,4 +41,5 @@
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>
+    <?php }; ?>
 </div>

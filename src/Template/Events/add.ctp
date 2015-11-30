@@ -12,6 +12,8 @@
     	<br/>
         <legend><?= __('Add Event') ?></legend>
         <?php
+            echo $this->Form->input('event_type_id', ['options' => $groups]);
+            echo "<br/>";
             echo $this->Form->input('event_type_id', ['options' => $eventTypes]);
             echo "<br/>";
             echo $this->Form->input('title');
