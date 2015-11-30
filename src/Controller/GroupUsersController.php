@@ -50,11 +50,11 @@ class GroupUsersController extends AppController
     {
         $groupUser = $this->GroupUsers->newEntity();
         if ($this->request->is('post')) {
-            print_r($this->request->data); 
+            //print_r($this->request->data); 
             $groupUser = $this->GroupUsers->patchEntity($groupUser, $this->request->data);
             if ($this->GroupUsers->save($groupUser)) {
                 $this->Flash->success(__('The group user has been saved.'));
-                return $this->redirect(['controller'=>'groups', 'action' => 'index']);
+                return $this->redirect(['controller'=>'Groups', 'action' => 'index']);
             } else {
                 $this->Flash->error(__('The group user could not be saved. Please, try again.'));
             }
@@ -112,7 +112,10 @@ class GroupUsersController extends AppController
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $groupUser = $this->GroupUsers->get($id);
+        //$groupUser = $this->GroupUsers->get($id);
+         $groupUser = $this->GroupUsers->get($id, [
+            'contain' => ['Users', 'Groups']
+        ]);
         if ($this->GroupUsers->delete($groupUser)) {
             $this->Flash->success(__('The group user has been deleted.'));
         } else {

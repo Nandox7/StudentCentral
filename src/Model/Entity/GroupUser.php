@@ -27,7 +27,6 @@ class GroupUser extends Entity
      */
     protected $_accessible = [
         '*' => true,
-        'group_id' => false,
-        'user_id' => false,
+        'id' => false,
     ];
 }

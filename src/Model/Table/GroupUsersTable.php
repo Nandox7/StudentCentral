@@ -27,8 +27,8 @@ class GroupUsersTable extends Table
         parent::initialize($config);
 
         $this->table('group_users');
-        $this->displayField('group_name');
-        $this->primaryKey(['group_id', 'user_id']);
+        $this->displayField('id');
+        $this->primaryKey(['id']);
 
         $this->belongsTo('Groups', [
             'foreignKey' => 'group_id',
