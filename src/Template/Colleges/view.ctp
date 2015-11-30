@@ -5,7 +5,6 @@
         <li><?= $this->Form->postLink(__('Delete College'), ['action' => 'delete', $college->id], ['confirm' => __('Are you sure you want to delete # {0}?', $college->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Colleges'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New College'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Courses'), ['controller' => 'Courses', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Course'), ['controller' => 'Courses', 'action' => 'add']) ?> </li>
     </ul>
 </nav>

@@ -11,8 +11,10 @@
             echo "</select></br>";
             //echo $this->Form->checkbox('is_admin', ['hiddenField' => false]) . " Admin";
         ?>
+        <input type="hidden" name="is_admin" value="0" />
+        Admin rights: <input type="checkbox" name="is_admin" value="1" /> 
+        <input type="hidden" name="group_id" value="<?php echo $group_id ?>" />
     </fieldset>
-     <input type="hidden" name="group_id" value="<?php echo $group_id ?>" />
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
