@@ -16,6 +16,10 @@
             <th><?= __('Group Name') ?></th>
             <td><?= h($group->group_name) ?></td>
         </tr>
+        <tr>
+            <th><?= __('Group Details') ?></th>
+            <td><?= h($group->group_details) ?></td>
+        </tr>
     </table>
 </div>
 <div class="groupUsers index large-9 medium-8 columns content">

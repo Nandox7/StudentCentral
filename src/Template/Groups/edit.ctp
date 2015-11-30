@@ -9,6 +9,8 @@
         <legend><?= __('Edit Group') ?></legend>
         <?php
             echo $this->Form->input('group_name');
+            echo "<b>Details</b></br>";
+            echo $this->Form->textarea('group_details', ['rows' => '10', 'cols' => '25']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

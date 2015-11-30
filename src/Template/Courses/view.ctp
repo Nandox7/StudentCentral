@@ -10,11 +10,9 @@
         <li><?= $this->Html->link(__('List Groups'), ['controller' => 'Groups', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Group'), ['controller' => 'Groups', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Students'), ['controller' => 'Students', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Student'), ['controller' => 'Students', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="courses view large-9 medium-8 columns content">
-    <h3><?= h($course->id) ?></h3>
     <table class="vertical-table">
         <tr>
             <th><?= __('Course Name') ?></th>
@@ -26,11 +24,7 @@
         </tr>
         <tr>
             <th><?= __('College') ?></th>
-            <td><?= $course->has('college') ? $this->Html->link($course->college->id, ['controller' => 'Colleges', 'action' => 'view', $course->college->id]) : '' ?></td>
-        </tr>
-        <tr>
-            <th><?= __('Id') ?></th>
-            <td><?= $this->Number->format($course->id) ?></td>
+            <td><?= $course->has('college') ? $this->Html->link($course->college->college_name, ['controller' => 'Colleges', 'action' => 'view', $course->college->id]) : '' ?></td>
         </tr>
     </table>
     <div class="related">

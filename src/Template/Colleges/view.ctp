@@ -10,15 +10,10 @@
     </ul>
 </nav>
 <div class="colleges view large-9 medium-8 columns content">
-    <h3><?= h($college->id) ?></h3>
     <table class="vertical-table">
         <tr>
             <th><?= __('College Name') ?></th>
             <td><?= h($college->college_name) ?></td>
-        </tr>
-        <tr>
-            <th><?= __('Id') ?></th>
-            <td><?= $this->Number->format($college->id) ?></td>
         </tr>
     </table>
     <div class="related">

@@ -55,6 +55,10 @@ class GroupsTable extends Table
         $validator
             ->requirePresence('group_name', 'create')
             ->notEmpty('group_name');
+            
+        $validator
+            ->requirePresence('group_details', 'create')
+            ->allowEmpty('group_details');
 
         return $validator;
     }

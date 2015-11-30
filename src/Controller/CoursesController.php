@@ -35,7 +35,7 @@ class CoursesController extends AppController
     public function view($id = null)
     {
         $course = $this->Courses->get($id, [
-            'contain' => ['Colleges', 'Groups', 'Students']
+            'contain' => ['Colleges', 'Groups']
         ]);
         $this->set('course', $course);
         $this->set('_serialize', ['course']);
