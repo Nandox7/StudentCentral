@@ -66,11 +66,28 @@ class EventsController extends AppController
         
         // Load model for the Group Users
         $this->loadModel('Groups');
+        // Load model for the Group Users
+        $this->loadModel('GroupUsers');
         
         $event = $this->Events->newEntity();
         if ($this->request->is('post')) {
+            
             $event = $this->Events->patchEntity($event, $this->request->data);
             $event['user_id'] = $user_id;
+            
+            // Check the event audience
+            switch ($this->request->data['event_audience']) {
+                case "Personal":
+                    break;
+                case "Group":
+                    break;
+                case "Course":
+                    $event['group_id'] = null;
+                    $event['course_id'] = $this->Auth->user('course_id');
+                    break;
+                
+            }
+            
             if ($this->Events->save($event)) {
                 $this->Flash->success(__('The event has been saved.'));
                 return $this->redirect(['action' => 'index']);
@@ -79,8 +96,16 @@ class EventsController extends AppController
             }
         }
         $eventTypes = $this->Events->EventTypes->find('list', ['limit' => 200]);
-        $this->set(compact('event', 'eventTypes'));
-        $this->set('groups', $this->Groups);
+        $groups = $this->GroupUsers->find('all', ['contain' => ['Groups', 'Users']])
+            ->where(['user_id =' => $user_id]);
+        
+        $myGroups = array();
+        foreach($groups as $group) {
+            $myGroups[$group->id] = $group->group->group_name;
+        }
+        
+        
+        $this->set(compact('event', 'eventTypes', 'myGroups'));
         $this->set('_serialize', ['event']);
     }
 

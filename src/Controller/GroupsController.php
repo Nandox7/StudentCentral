@@ -16,13 +16,13 @@ class GroupsController extends AppController
     public function index()
     {
         // Get ID of current user
-        $id = $this->Auth->user('id');
+        $user_id = $this->Auth->user('id');
      
         // Load model for the Group Users
         $this->loadModel('GroupUsers');
         
         $my_groups = $this->GroupUsers->find("all", ['contain' => ['Groups', 'Users']])
-            ->where(['user_id =' => $id]);
+            ->where(['user_id =' => $user_id]);
         
         $this->set('myGroups', $this->paginate($my_groups));
         $this->set('myGroups', $my_groups);

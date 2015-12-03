@@ -1,7 +1,7 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('More Options:') ?></li>
-        <li><?= $this->Html->link(__('New Event'), ['controller' => 'Events', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('New ' . $eventType->name), ['controller' => 'Events', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('All Events'), ['controller' => 'Events', 'action' => 'index']) ?> </li>
     </ul>
 </nav>

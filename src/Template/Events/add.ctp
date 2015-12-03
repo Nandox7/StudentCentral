@@ -1,3 +1,7 @@
+<?php
+    echo $this->Html->script('jquery.min.js');
+?>
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -11,8 +15,17 @@
     <fieldset>
     	<br/>
         <legend><?= __('Add Event') ?></legend>
+        <div class="input select">
+            <label for="event_audience">Event Audience </label>
+            <select name="event_audience" id="event_audience">
+                <option value="Personal">Personal</option>
+                <option value="Group">Group</option>
+                <option value="Course">Course</option>
+            </select>
+        </div>
+        <br/>
         <?php 
-            echo $this->Form->input('event_audience', ['options' => $groups]);
+            echo $this->Form->input('group_id', ['options' => $myGroups]);
             echo "<br/>";
             echo $this->Form->input('event_type_id', ['options' => $eventTypes]);
             echo "<br/>";
@@ -36,3 +49,18 @@
 </div>
 
 <button type = "submit" class="mdl-button mdl-js-button mdl-button--raised">Save</button>
+
+        <script type='text/javascript'>
+            // jQuery code to enable select
+            $(document).ready(function() {
+                $('#group-id').attr('disabled','disabled');        
+                $('select[name="event_audience"]').on('change',function(){
+                var  choice = $(this).val();
+                    if(choice == "Group"){           
+                        $('#group-id').removeAttr('disabled');          
+                    }else{
+                        $('#group-id').attr('disabled','disabled'); 
+                    }
+                });
+            });
+        </script>
