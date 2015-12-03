@@ -143,7 +143,8 @@ class EventsController extends AppController
             ->where([
                 'start >=' => $startdate, 
                 'end <=' => $enddate,
-                'user_id =' => $user_id
+                'user_id =' => $user_id,
+                'active =' => 1
                 ]);
 		
 		// Enable to output SQL query
@@ -165,7 +166,7 @@ class EventsController extends AppController
 					'allDay' => $allday,
 					'url' => '/events/view/'.$event['id'],
 					//'details' => $event['details'],
-					'className' => $event['EventType']['color']
+					'color' => $event['EventType']['color']
 			);
 		}
 		

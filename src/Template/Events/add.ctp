@@ -11,8 +11,8 @@
     <fieldset>
     	<br/>
         <legend><?= __('Add Event') ?></legend>
-        <?php
-            echo $this->Form->input('event_type_id', ['options' => $groups]);
+        <?php 
+            echo $this->Form->input('event_audience', ['options' => $groups]);
             echo "<br/>";
             echo $this->Form->input('event_type_id', ['options' => $eventTypes]);
             echo "<br/>";
@@ -25,8 +25,6 @@
             echo $this->Form->input('end');
             echo "<br/>";
             echo $this->Form->input('all_day');
-            echo "<br/>";
-            echo $this->Form->input('status');
             echo "<br/>";
             echo $this->Form->input('active');
             echo "<br/>";

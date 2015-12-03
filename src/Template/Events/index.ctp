@@ -11,26 +11,22 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th><?= $this->Paginator->sort('id') ?></th>
                 <th><?= $this->Paginator->sort('event_type_id') ?></th>
                 <th><?= $this->Paginator->sort('title') ?></th>
                 <th><?= $this->Paginator->sort('start') ?></th>
                 <th><?= $this->Paginator->sort('end') ?></th>
                 <th><?= $this->Paginator->sort('all_day') ?></th>
-                <th><?= $this->Paginator->sort('status') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($events as $event): ?>
             <tr>
-                <td><?= $this->Number->format($event->id) ?></td>
                 <td><?= $event->has('event_type') ? $this->Html->link($event->event_type->name, ['controller' => 'EventTypes', 'action' => 'view', $event->event_type->id]) : '' ?></td>
                 <td><?= h($event->title) ?></td>
                 <td><?= h($event->start) ?></td>
                 <td><?= h($event->end) ?></td>
-                <td><?= h($event->all_day) ?></td>
-                <td><?= h($event->status) ?></td>
+                <td><?= h($event->all_day ? "Y" : "N") ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $event->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $event->id]) ?>

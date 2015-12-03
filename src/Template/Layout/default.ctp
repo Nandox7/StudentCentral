@@ -124,7 +124,7 @@ $cakeDescription = __d('cake_dev', 'Student Central');
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
           <a class="mdl-navigation__link" href="/dashboard/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>dashboard</a>
           <a class="mdl-navigation__link" href="/full_calendar"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">today</i>calendar</a>
-          <a class="mdl-navigation__link" href=""><span class="material-icons mdl-badge" data-badge="4">list</span></i></i>tasks</a>
+          <a class="mdl-navigation__link" href="/event_types/view/5"><span class="material-icons mdl-badge" data-badge="4">list</span></i></i>tasks</a>
           <a class="mdl-navigation__link" href="/event_types/view/4"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assessment</i>exams</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">schedule</i>schedule</a>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>grades</a>
@@ -133,13 +133,14 @@ $cakeDescription = __d('cake_dev', 'Student Central');
           <div class="mdl-layout-spacer"></div>
         </nav>
       </div>
+      
+    	<?php echo $this->Flash->render(); ?>
+    	
       <main class="mdl-layout__content mdl-color--grey-100">
           
-    	<?php echo $this->Flash->render(); ?>
-    
     	<?php echo $this->fetch('content'); ?>
 
-	  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position: fixed; left: -1000px; height: -1000px;">
+	    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position: fixed; left: -1000px; height: -1000px;">
         <defs>
           <mask id="piemask" maskContentUnits="objectBoundingBox">
             <circle cx=0.5 cy=0.5 r=0.49 fill="white">

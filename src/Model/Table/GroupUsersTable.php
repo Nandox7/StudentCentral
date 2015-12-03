@@ -71,6 +71,10 @@ class GroupUsersTable extends Table
     {
         $rules->add($rules->existsIn(['group_id'], 'Groups'));
         $rules->add($rules->existsIn(['user_id'], 'Users'));
+        $rules->add($rules->isUnique(['group_id', 'user_id']), [
+                    'errorField' => 'User',
+                    'message' => 'User is already part of the group!!!'
+        ]);
         return $rules;
     }
 }

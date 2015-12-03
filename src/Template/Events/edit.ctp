@@ -23,7 +23,6 @@
             echo $this->Form->input('start');
             echo $this->Form->input('end');
             echo $this->Form->input('all_day');
-            echo $this->Form->input('status');
             echo $this->Form->input('active');
         ?>
     </fieldset>

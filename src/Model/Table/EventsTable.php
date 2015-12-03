@@ -40,6 +40,14 @@ class EventsTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('Courses', [
+            'foreignKey' => 'course_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Groups', [
+            'foreignKey' => 'group_id',
+            'joinType' => 'INNER'
+        ]);
     }
 
     /**
@@ -78,10 +86,6 @@ class EventsTable extends Table
             ->notEmpty('all_day');
 
         $validator
-            ->requirePresence('status', 'create')
-            ->notEmpty('status');
-
-        $validator
             ->add('active', 'valid', ['rule' => 'boolean'])
             ->requirePresence('active', 'create')
             ->notEmpty('active');
@@ -100,6 +104,8 @@ class EventsTable extends Table
     {
         $rules->add($rules->existsIn(['event_type_id'], 'EventTypes'));
         $rules->add($rules->existsIn(['user_id'], 'Users'));
+        $rules->add($rules->existsIn(['course_id'], 'Courses'));
+        $rules->add($rules->existsIn(['group_id'], 'Groups'));
         return $rules;
     }
 }
