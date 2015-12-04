@@ -164,17 +164,18 @@ class EventsController extends AppController
 		$enddate = $this->request->query('end');
 		
 		// Fetch all results withing the specified dates
-        $events = $this->Events->find('all')
+        $events = $this->Events->find('all', [
+            'contain' => ['EventTypes']
+            ])
             ->where([
                 'start >=' => $startdate, 
                 'end <=' => $enddate,
                 'user_id =' => $user_id,
-                'active =' => 1
+                'active =' => 1,
                 ]);
 		
 		// Enable to output SQL query
 		//debug($events);
-
 		foreach($events as $event) {
 			if($event['all_day'] == 1) {
 				$allday = true;
@@ -183,6 +184,7 @@ class EventsController extends AppController
 				$allday = false;
 				$end = $event['end'];
 			}
+
 			$data[] = array(
 					'id' => $event['id'],
 					'title'=>$event['title'],
@@ -191,7 +193,7 @@ class EventsController extends AppController
 					'allDay' => $allday,
 					'url' => '/events/view/'.$event['id'],
 					//'details' => $event['details'],
-					'color' => $event['EventType']['color']
+					'color' => $event['event_type']['color']
 			);
 		}
 		
