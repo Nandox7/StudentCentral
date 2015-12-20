@@ -11,6 +11,32 @@ use App\Controller\AppController;
 class EventsController extends AppController
 {
 
+    // Search a multidimention array
+    private function in_array_r($needle, $haystack, $strict = false) {
+        foreach ($haystack as $item) {
+            if (($strict ? $item === $needle : $item == $needle) || (is_array($item) && in_array_r($needle, $item, $strict))) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    // Return and array of the groups that the user belongs
+    private function userGroups() {
+        $groups = array();
+        $userGroups = $this->GroupUsers->find('all')
+            ->where([
+                'user_id' => $this->Auth->user('id')
+                ]);
+		// Get groups the user belogs
+		foreach($userGroups as $group) {
+		    $groups[] = $group['group_id'];
+		}
+		return $groups;
+    }
+
+//------------------------------------------------------------------------------
     public function initialize()
     {
         parent::initialize();
@@ -95,15 +121,18 @@ class EventsController extends AppController
                 $this->Flash->error(__('The event could not be saved. Please, try again.'));
             }
         }
-        $eventTypes = $this->Events->EventTypes->find('list', ['limit' => 200]);
-        $groups = $this->GroupUsers->find('all', ['contain' => ['Groups', 'Users']])
-            ->where(['user_id =' => $user_id]);
+        
+        $eventTypes = $this->Events->EventTypes->find('list');
+        $groups = $this->GroupUsers->find('all', 
+                                        ['contain' => ['Groups', 'Users']])
+                                        ->where([
+                                            'user_id =' => $user_id
+                                        ]);
         
         $myGroups = array();
         foreach($groups as $group) {
-            $myGroups[$group->id] = $group->group->group_name;
+            $myGroups[$group->group_id] = $group->group->group_name;
         }
-        
         
         $this->set(compact('event', 'eventTypes', 'myGroups'));
         $this->set('_serialize', ['event']);
@@ -157,25 +186,37 @@ class EventsController extends AppController
     // The feed action is called from "webroot/js/ready.js" to get the list of events (JSON)
 	function feed($id=null) {
 
+        // Load model for the Group Users
+        $this->loadModel('GroupUsers');
+
         $user_id =  $this->Auth->user('id');
         
         // Get params from URL for start and end date		
 		$startdate = $this->request->query('start');
 		$enddate = $this->request->query('end');
 		
-		// Fetch all results withing the specified dates
+		$data = array();
+		
+		// Fetch all personal results withing the specified dates
         $events = $this->Events->find('all', [
             'contain' => ['EventTypes']
             ])
             ->where([
                 'start >=' => $startdate, 
                 'end <=' => $enddate,
-                'user_id =' => $user_id,
-                'active =' => 1,
+                'active =' => 1, // Only show active events
+                ])
+            ->andWhere(function ($exp) {
+                return $exp->or_([
+                    'user_id =' => $this->Auth->user('id'),
+                    'group_id IN' => $this->userGroups(),
+                    'course_id =' => $this->Auth->user('course_id'),
                 ]);
+            });
 		
-		// Enable to output SQL query
+		// Debug Query
 		//debug($events);
+		
 		foreach($events as $event) {
 			if($event['all_day'] == 1) {
 				$allday = true;
@@ -223,5 +264,6 @@ class EventsController extends AppController
 	}
 
 }
+
 
 ?>

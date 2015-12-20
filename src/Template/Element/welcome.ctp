@@ -1,0 +1,1 @@
+<span class="mdl-layout-title">Welcome to your dashboard <?php echo $this->request->session()->read('Auth.User.first_name') . " " . $this->request->session()->read('Auth.User.last_name') ?></span>

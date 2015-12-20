@@ -1,0 +1,3 @@
+[submodule "plugins/Dropbox"]
+	path = plugins/Dropbox
+	url = git://github.com/shama/cakebox.git

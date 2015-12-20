@@ -1,17 +1,5 @@
 <div class="row">
-	<div class="columns large-3">
-		<ul>
-			<li>
-				<a href="<?= $this->Url->build( '/users/register', true );?>">Register</a>
-			</li>
-			<li>
-				<a href="<?= $this->Url->build( '/users/login', true );?>">Login</a>
-			</li>
-			<li>
-				<a href="<?= $this->Url->build( '/users/logout', true );?>">Logout</a>
-			</li>
-		</ul>
-	</div>
+	
 	<div class="columns large-9">
 		<div class="users form">
 			<?= $this->Flash->render('auth') ?>

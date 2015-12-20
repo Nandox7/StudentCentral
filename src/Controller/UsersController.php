@@ -26,6 +26,9 @@ class UsersController extends AppController
 
     public function register()
     {
+        $this->loadModel('Courses');
+        $courses = $this->Courses->find('all');
+        
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->data);
@@ -36,6 +39,7 @@ class UsersController extends AppController
             $this->Flash->error(__('Unable to add the user.'));
         }
         $this->set('user', $user);
+        $this->set(compact('courses'));
     }
     
 	public function login()

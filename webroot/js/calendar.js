@@ -17,6 +17,16 @@ $.ajaxSetup({
     }
 });
 
+// Polling loop to reload events
+function realodEvents() {
+    setTimeout(function () {
+        // Events reload
+		console.log('Reloading calendar events...');
+    	$('#calendar').fullCalendar( 'refetchEvents');
+        realodEvents();
+    }, 600000);
+}
+
 // JavaScript Document
 $(document).ready(function() {
 
@@ -32,12 +42,33 @@ $(document).ready(function() {
 		eventLimit: true, // allow "more" link when too many events
 		lazyFetching: true,
 		events: "/events/feed",
-		dayClick: function() {
-        	alert('a day has been clicked!');
-        	console.log("Day clicked...");
+		dayRender: function(date, element, view){
+    	   element.bind('dblclick', function() {
+        	    var date = date;
+        	});
     	},
+    	dayClick: function(date, jsEvent, view) {
+	
+	        //alert('Clicked on: ' + date.format());
+	        //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+	        //alert('Current view: ' + view.name);
+	
+	        // change the day's background color just for fun
+	        //$(this).css('background-color', 'red');
+
+    	},
+    	//eventClick: function(calEvent, jsEvent, view) {
+	
+	        //alert('Event: ' + calEvent.title);
+	        //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+	        //alert('View: ' + view.name);
+	
+	        // change the border color just for fun
+	        //$(this).css('border-color', 'red');
+
+    	//},
 		eventRender: function(event, element) {
-			console.log("Event details: " + event.details);
+			//console.log("Event details: " + event.details);
         	if (event.details) {
 	        	element.qtip({
 					content: event.details,
@@ -53,7 +84,10 @@ $(document).ready(function() {
 						tip: 'leftTop'
 					}
 	        	});
-	        	console.log('Event added...');
+	        	element.bind('dblclick', function() {
+         			alert('double click!');
+      			});
+	        	//console.log('Event added...');
         	}
     	},
 		eventDragStart: function(event) {
@@ -100,7 +134,9 @@ $(document).ready(function() {
 			$.post(url, function(data){});
 		}
     })
+    
+    // Set auto reload of events
+    realodEvents();
 
+	console.log("Calendar loaded...");
 });
-
-console.log("Calendar loaded...");

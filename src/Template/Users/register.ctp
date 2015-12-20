@@ -1,17 +1,4 @@
 <div class="row">
-	<div class="columns large-3">
-		<ul>
-			<li>
-				<a href="<?= $this->Url->build( '/users/register', true );?>">Register</a>
-			</li>
-			<li>
-				<a href="<?= $this->Url->build( '/users/login', true );?>">Login</a>
-			</li>
-			<li>
-				<a href="<?= $this->Url->build( '/users/logout', true );?>">Logout</a>
-			</li>
-		</ul>
-	</div>
 	<div class="columns large-9">
 		<div class="users form">
 		<?= $this->Form->create($user) ?>
@@ -27,6 +14,13 @@
 					<?= $this->Form->input('email') ?>
 					<?= $this->Form->input('username') ?>
 					<?= $this->Form->input('password') ?>
+					<?php
+			            echo "<select name=\"course_id\">";
+			            foreach($courses as $course) {
+			                echo "<option value=\"" . $course['id'] . "\">" . $course['course_name'] . " (" . $course[course_code] .  ")</option>";
+			            }
+			            echo "</select></br>";
+			        ?>
 				</fieldset>
 				<?= $this->Form->button(__('Submit')); ?>
 				<input type="submit" name="Submit"/>

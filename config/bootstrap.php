@@ -202,4 +202,7 @@ DispatcherFactory::add('ControllerFactory');
 Type::build('date')->useLocaleParser();
 Type::build('datetime')->useLocaleParser();
 
-         Configure::write('Security.level', 'low'); 
+Configure::write('Security.level', 'low'); 
+
+// Load the Dropbox plugin
+Plugin::load('Dropbox');

@@ -70,31 +70,34 @@ $cakeDescription = __d('cake_dev', 'Student Central');
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+ 
 	<?php
 		echo $this->Html->meta('icon');
-
-
-		echo $this->Html->css('cake');
 		
+		echo $this->Html->css('cake');
 		echo $this->Html->css('material.min.css');
-		echo $this->Html->css('styles.css');
-		echo $this->Html->css('styles_extra.css');
-		echo $this->Html->css('mdl_extras.css');
-
-
+		echo $this->Html->css('mdl_styles.css');
+	
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
-		
+	
+	 //<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.lime-orange.min.css" />
+   	
 	?>
+    
 	
   </head>
   <body>
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Welcome to your dashboard Fernando<i class="material-icons">face</i></span>
+          <?php 
+            
+            if ($this->request->session()->read('Auth.User.id')) {
+              echo $this->element('welcome'); 
+            }
+          ?>
           <div class="mdl-layout-spacer"></div>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
             <i class="material-icons">more_vert</i>
@@ -124,11 +127,10 @@ $cakeDescription = __d('cake_dev', 'Student Central');
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
           <a class="mdl-navigation__link" href="/dashboard/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>dashboard</a>
           <a class="mdl-navigation__link" href="/full_calendar"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">today</i>calendar</a>
-          <a class="mdl-navigation__link" href="/event_types/view/5"><span class="material-icons mdl-badge" data-badge="4">list</span></i></i>tasks</a>
+          <a class="mdl-navigation__link" href="/event_types/view/5"><span class="material-icons mdl-badge" >list</span></i></i>tasks</a>
           <a class="mdl-navigation__link" href="/event_types/view/4"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assessment</i>exams</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">schedule</i>schedule</a>
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>grades</a>
-          <a class="mdl-navigation__link" href="/groups"><span class="material-icons mdl-badge" data-badge="1">group</span></i>groups</a>
+          <a class="mdl-navigation__link" href="/event_types/view/1"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">schedule</i>schedule</a>
+          <a class="mdl-navigation__link" href="/groups"><span class="material-icons mdl-badge" >group</span></i>groups</a>
           <a class="mdl-navigation__link" href="/users/logout"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">lock</i>logout</a>
           <div class="mdl-layout-spacer"></div>
         </nav>
